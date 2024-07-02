@@ -1,3 +1,6 @@
+baseurl: ""
+url: "https://jpa.qubitpi.org"
+
 github: [metadata]
 remote_theme: jakartaee/jekyll-theme-jakarta-ee
 #theme: jekyll-theme-jakarta-ee
@@ -7,7 +10,7 @@ description: [Specification Project]
 
 links:
   officialhome: https://jakarta.ee/specifications/persistence/
-  source: https://github.com/jakartaee/persistence
+  source: https://github.com/QubitPi/jakartaee-persistence
   javadocs: latest/api/
   stablejavadocs: latest/api
   stablehtml: latest/draft.html

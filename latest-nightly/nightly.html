@@ -530,8 +530,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div class="details">
 <span id="author" class="author">Jakarta Persistence Team, https://projects.eclipse.org/projects/ee4j.jpa</span><br>
 <span id="email" class="email"><a href="https://dev.eclipse.org/mailman/listinfo/jpa-dev" class="bare">https://dev.eclipse.org/mailman/listinfo/jpa-dev</a></span><br>
-<span id="revnumber"> 3.3-SNAPSHOT,</span>
-<span id="revdate">July 03, 2025</span>
+<span id="revnumber"> 4.0-SNAPSHOT,</span>
+<span id="revdate">July 04, 2025</span>
 <br><span id="revremark">DRAFT</span>
 </div>
 <div id="toc" class="toc2">
@@ -1255,15 +1255,16 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#related-documents">Related Documents</a></li>
 <li><a href="#revision-history">Appendix A: Revision History</a>
 <ul class="sectlevel2">
-<li><a href="#jakarta-persistence-3-2">A.1. Jakarta Persistence 3.2</a>
+<li><a href="#jakarta-persistence-4-0">A.1. Jakarta Persistence 4.0</a></li>
+<li><a href="#jakarta-persistence-3-2">A.2. Jakarta Persistence 3.2</a>
 <ul class="sectlevel3">
-<li><a href="#deprecations">A.1.1. Deprecations</a></li>
-<li><a href="#deprecations-for-removal">A.1.2. Deprecations for removal</a></li>
+<li><a href="#deprecations">A.2.1. Deprecations</a></li>
+<li><a href="#deprecations-for-removal">A.2.2. Deprecations for removal</a></li>
 </ul>
 </li>
-<li><a href="#jakarta-persistence-3-1">A.2. Jakarta Persistence 3.1</a></li>
-<li><a href="#jakarta-persistence-3-0">A.3. Jakarta Persistence 3.0</a></li>
-<li><a href="#java-persistence-2-2-maintenance-release-draft">A.4. Java Persistence 2.2 (Maintenance Release Draft)</a></li>
+<li><a href="#jakarta-persistence-3-1">A.3. Jakarta Persistence 3.1</a></li>
+<li><a href="#jakarta-persistence-3-0">A.4. Jakarta Persistence 3.0</a></li>
+<li><a href="#java-persistence-2-2-maintenance-release-draft">A.5. Java Persistence 2.2 (Maintenance Release Draft)</a></li>
 </ul>
 </li>
 <li><a href="#persistence-api">Appendix B: Persistence API Interfaces</a>
@@ -1367,11 +1368,11 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div class="content">
 <pre>Specification: Jakarta Persistence
 
-Version: 3.3-SNAPSHOT
+Version: 4.0-SNAPSHOT
 
 Status: DRAFT
 
-Release: July 03, 2025</pre>
+Release: July 04, 2025</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -18768,14 +18769,13 @@ unit with:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-
 <span class="comment">&lt;!-- persistence.xml schema --&gt;</span>
 <span class="tag">&lt;xsd:schema</span> <span class="attribute-name">targetNamespace</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://jakarta.ee/xml/ns/persistence</span><span class="delimiter">&quot;</span></span>
   <span class="attribute-name">xmlns:xsd</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.w3.org/2001/XMLSchema</span><span class="delimiter">&quot;</span></span>
   <span class="attribute-name">xmlns:persistence</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://jakarta.ee/xml/ns/persistence</span><span class="delimiter">&quot;</span></span>
   <span class="attribute-name">elementFormDefault</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">qualified</span><span class="delimiter">&quot;</span></span>
   <span class="attribute-name">attributeFormDefault</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">unqualified</span><span class="delimiter">&quot;</span></span>
-  <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">3.2</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">4.0</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
 
    <span class="tag">&lt;xsd:annotation&gt;</span>
      <span class="tag">&lt;xsd:documentation&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>
@@ -18795,8 +18795,8 @@ unit with:</p>
       &lt;persistence xmlns=&quot;https://jakarta.ee/xml/ns/persistence&quot;
         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
         xsi:schemaLocation=&quot;https://jakarta.ee/xml/ns/persistence
-          https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd&quot;
-        version=&quot;3.2&quot;&gt;
+          https://jakarta.ee/xml/ns/persistence/persistence_4_0.xsd&quot;
+        version=&quot;4.0&quot;&gt;
           ...
       &lt;/persistence&gt;
 
@@ -19081,7 +19081,7 @@ unit with:</p>
         <span class="tag">&lt;/xsd:element&gt;</span>
       <span class="tag">&lt;/xsd:sequence&gt;</span>
       <span class="tag">&lt;xsd:attribute</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">version</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">persistence:versionType</span><span class="delimiter">&quot;</span></span>
-                     <span class="attribute-name">fixed</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">3.2</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">use</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">required</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                     <span class="attribute-name">fixed</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">4.0</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">use</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">required</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/xsd:complexType&gt;</span>
   <span class="tag">&lt;/xsd:element&gt;</span>
 
@@ -19166,7 +19166,8 @@ discovering the <code>persistence.xml</code> files and processing them.</p>
 <p>When the container finds a <code>persistence.xml</code>
 file, it must process the persistence unit definitions that it contains.
 The container must validate the <code>persistence.xml</code> file against the
-<code>persistence_3_2.xsd</code>, <code>persistence_3_0.xsd</code> or <code>persistence_2_2.xsd</code> schema in accordance with
+<code>persistence_4_0.xsd</code>, <code>persistence_3_2.xsd</code>, <code>persistence_3_0.xsd</code>
+or <code>persistence_2_2.xsd</code> schema in accordance with
 the version specified by the <code>persistence.xml</code> file and report any validation errors.
 Provider or data source information not specified in the <code>persistence.xml</code> file
 must be provided at deployment time or defaulted by the container. The
@@ -29139,8 +29140,8 @@ or defaulted by the use of annotations, as described below.</p>
 <div class="paragraph">
 <p>The mapping files used by the application
 developer must conform to the XML schema defined in <a href="#a17175">Section 12.3</a>
-or to the previous versions of the XML schema, <code>orm_3_1.xsd</code>,
-<code>orm_3_0.xsd</code> or <code>orm_2_2.xsd</code>,
+or to the previous versions of the XML schema, <code>orm_3_2.xsd</code>,
+<code>orm_3_1.xsd</code>, <code>orm_3_0.xsd</code> or <code>orm_2_2.xsd</code>,
 defined in a previous version of this specification <a href="#a19493">[1]</a>
 in accordance with the version specified by the <code>orm.xml</code> file.</p>
 </div>
@@ -30302,14 +30303,13 @@ object/relational mapping schema for use with the Persistence API.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-
 <span class="comment">&lt;!-- Jakarta Persistence API object/relational mapping file schema --&gt;</span>
 <span class="tag">&lt;xsd:schema</span> <span class="attribute-name">targetNamespace</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://jakarta.ee/xml/ns/persistence/orm</span><span class="delimiter">&quot;</span></span>
   <span class="attribute-name">xmlns:orm</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">https://jakarta.ee/xml/ns/persistence/orm</span><span class="delimiter">&quot;</span></span>
   <span class="attribute-name">xmlns:xsd</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.w3.org/2001/XMLSchema</span><span class="delimiter">&quot;</span></span>
   <span class="attribute-name">elementFormDefault</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">qualified</span><span class="delimiter">&quot;</span></span>
   <span class="attribute-name">attributeFormDefault</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">unqualified</span><span class="delimiter">&quot;</span></span>
-  <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">3.2</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="attribute-name">version</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">4.0</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
   <span class="tag">&lt;xsd:annotation&gt;</span>
      <span class="tag">&lt;xsd:documentation&gt;</span><span class="inline-delimiter">&lt;![CDATA[</span>
 
@@ -30329,8 +30329,8 @@ object/relational mapping schema for use with the Persistence API.</p>
       &lt;entity-mappings xmlns=&quot;https://jakarta.ee/xml/ns/persistence/orm&quot;
         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
         xsi:schemaLocation=&quot;https://jakarta.ee/xml/ns/persistence/orm
-          https://jakarta.ee/xml/ns/persistence/orm/orm_3_2.xsd&quot;
-        version=&quot;3.2&quot;&gt;
+          https://jakarta.ee/xml/ns/persistence/orm/orm_4_0.xsd&quot;
+        version=&quot;4.0&quot;&gt;
           ...
       &lt;/entity-mappings&gt;
 
@@ -30421,7 +30421,7 @@ object/relational mapping schema for use with the Persistence API.</p>
                      <span class="attribute-name">minOccurs</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">maxOccurs</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">unbounded</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
       <span class="tag">&lt;/xsd:sequence&gt;</span>
       <span class="tag">&lt;xsd:attribute</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">version</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">orm:versionType</span><span class="delimiter">&quot;</span></span>
-                     <span class="attribute-name">fixed</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">3.2</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">use</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">required</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+                     <span class="attribute-name">fixed</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">4.0</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">use</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">required</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/xsd:complexType&gt;</span>
   <span class="tag">&lt;/xsd:element&gt;</span>
 
@@ -32780,7 +32780,11 @@ object/relational mapping schema for use with the Persistence API.</p>
 <p>This appendix lists the significant changes that have been made during the development of the Jakarta Persistence specification.</p>
 </div>
 <div class="sect2">
-<h3 id="jakarta-persistence-3-2"><a class="anchor" href="#jakarta-persistence-3-2"></a>A.1. Jakarta Persistence 3.2</h3>
+<h3 id="jakarta-persistence-4-0"><a class="anchor" href="#jakarta-persistence-4-0"></a>A.1. Jakarta Persistence 4.0</h3>
+
+</div>
+<div class="sect2">
+<h3 id="jakarta-persistence-3-2"><a class="anchor" href="#jakarta-persistence-3-2"></a>A.2. Jakarta Persistence 3.2</h3>
 <div class="paragraph">
 <p>Added support for Java record types as embeddable classes</p>
 </div>
@@ -32959,7 +32963,7 @@ at the java package level</p>
 <p>Improved AsciiDoc formatting and fixed typos through the specification document</p>
 </div>
 <div class="sect3">
-<h4 id="deprecations"><a class="anchor" href="#deprecations"></a>A.1.1. Deprecations</h4>
+<h4 id="deprecations"><a class="anchor" href="#deprecations"></a>A.2.1. Deprecations</h4>
 <div class="paragraph">
 <p>Deprecated usage of <code>Calendar</code>, <code>Date</code>, <code>Time</code>, <code>Timestamp</code>, <code>Temporal</code>, <code>MapKeyTemporal</code> and <code>TemporalType</code>
 in new applications in favour of <code>java.time</code> API</p>
@@ -32972,7 +32976,7 @@ in new applications in favour of <code>java.time</code> API</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deprecations-for-removal"><a class="anchor" href="#deprecations-for-removal"></a>A.1.2. Deprecations for removal</h4>
+<h4 id="deprecations-for-removal"><a class="anchor" href="#deprecations-for-removal"></a>A.2.2. Deprecations for removal</h4>
 <div class="paragraph">
 <p>Deprecated <code>addSubclassSubgraph()</code> in <code>EntityGraph</code> for removal; <code>addTreatedSubgraph()</code> method should be used as direct replacement</p>
 </div>
@@ -32991,7 +32995,7 @@ in this class for removal with no replacement. This class is not designed for ex
 </div>
 </div>
 <div class="sect2">
-<h3 id="jakarta-persistence-3-1"><a class="anchor" href="#jakarta-persistence-3-1"></a>A.2. Jakarta Persistence 3.1</h3>
+<h3 id="jakarta-persistence-3-1"><a class="anchor" href="#jakarta-persistence-3-1"></a>A.3. Jakarta Persistence 3.1</h3>
 <div class="paragraph">
 <p><code>EntityManagerFactory</code> and <code>EntityManager</code> interfaces extend <code>java.lang.AutoCloseable</code> interface</p>
 </div>
@@ -33033,7 +33037,7 @@ corresponding <code>localDate()</code>, <code>localDateTime()</code>, and <code>
 </div>
 </div>
 <div class="sect2">
-<h3 id="jakarta-persistence-3-0"><a class="anchor" href="#jakarta-persistence-3-0"></a>A.3. Jakarta Persistence 3.0</h3>
+<h3 id="jakarta-persistence-3-0"><a class="anchor" href="#jakarta-persistence-3-0"></a>A.4. Jakarta Persistence 3.0</h3>
 <div class="paragraph">
 <p>Created document from Java Persistence 2.2 Final Release specification.</p>
 </div>
@@ -33052,7 +33056,7 @@ to <a href="https://jakarta.ee/xml/ns/persistence" class="bare">https://jakarta.
 </div>
 </div>
 <div class="sect2">
-<h3 id="java-persistence-2-2-maintenance-release-draft"><a class="anchor" href="#java-persistence-2-2-maintenance-release-draft"></a>A.4. Java Persistence 2.2 (Maintenance Release Draft)</h3>
+<h3 id="java-persistence-2-2-maintenance-release-draft"><a class="anchor" href="#java-persistence-2-2-maintenance-release-draft"></a>A.5. Java Persistence 2.2 (Maintenance Release Draft)</h3>
 <div class="paragraph">
 <p>Created document from Java Persistence 2.1
 Final Release specification.</p>
@@ -45022,8 +45026,8 @@ reference to Java SE service provider requirements.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
- 3.3-SNAPSHOT<br>
-Last updated 2025-07-03 09:19:07 UTC
+ 4.0-SNAPSHOT<br>
+Last updated 2025-07-04 05:25:30 UTC
 </div>
 </div>
 </body>
